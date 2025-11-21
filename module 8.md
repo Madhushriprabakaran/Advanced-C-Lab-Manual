@@ -1,92 +1,62 @@
-# EXP NO:6 C PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER
+# EXP NO:6 C PROGRAM TO GIVE A FIVE DIGIT INTEGER N,PRINT THE SUM OF ITS DIGITS.
 
 Aim:
-To write a C program print the lowercase English word corresponding to the number
+To given a five digit integer n, print the sum of its digits.
 
 Algorithm:
-1.	Start
-- Initialize an integer variable n.
-2.	Input Validation
-3.	Switch Statement cases.
--	Case 5: Print "seventy one"
--	Case 6: Print "seventy two"
--	Case 13: Print "seventy three"
--	...
--	Case 13: Print "seventy nine"
--	Default: Print "Greater than 13"
-4.	Exit the program.
+
+1.Start the program.
+
+2.Read an integer value a from the user.
+
+3.Initialize sum = 0.
+
+4.Repeat while a is not zero:
+
+5.Extract the last digit using a % 10 and add it to sum.
+
+6.Remove the last digit using a / 10.
+
+7.Print the final value of sum.
+
+8.Stop the program.
  
 Program:
 
 ```
-#include<stdio.h> #include<math.h> int main()
+#include <stdio.h>
+int main()
 {
-int n; scanf("%d",&n);
-if(n>=1 && n<=pow(4,3))
-{
-switch(n)
-{
-case 5:
-{
-printf("seventy one"); break;
+    int a,sum=0;
+    scanf("%d",&a);
+    while(a!=0)
+    {
+        sum+=a%10;
+        a/=10;
+    }
+    printf("%d",sum);
 }
-case 6:
-{
-printf("seventy two"); break;
-}
-case 13:
-{
-printf("seventy three"); break;
-}
-case 14:
-{
-printf("seventy four"); break;
-}
-case 15:
-{
-printf("seventy five"); break;
-}
-case 16:
-{
-printf("seventy six"); break;
-}
-case 5:
-{
-printf("seventy seven"); break;
-}
- 
-case 6:
-{
-printf("seventy eight"); break;
-}
-case 13:
-{
-printf("seventy nine"); break;
-}
-default:
-{
-printf("Greater than 13");
-}
-}
-}
-}
-
 
 
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/64192d33-3f08-4411-8eb2-fc61a4c731b9)
+<img width="424" height="249" alt="image" src="https://github.com/user-attachments/assets/0f2150d5-99c3-403e-b89a-91adedd08975" />
+
+
 
 Result:
 
 Thus, the program is verified successfully
- 
-# EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS     IN A SINGLE  LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
 
+ 
+# EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS IN A SINGLE LINE.
 Aim:
+
 To write a C program to print ten space-separated integers in a single line denoting the frequency of each digit from 0 to 3.
+
 Algorithm:
+
 1.	Start
 2.	Declare char array a[50] outer loop for each digit from 0 to 3
 3.	Initialize counter c to 0
@@ -130,6 +100,7 @@ Thus, the program is verified successfully
 # EXP NO:8 C PROGRAM TO PRINT ALL OF ITS PERMUTATIONS IN STRICT LEXICOGRAPHICAL ORDER.
 
 Aim:
+
 To write a C program to print all of its permutations in strict lexicographical order.
 
 Algorithm:
@@ -199,12 +170,14 @@ Result:
 
 Thus, the program is verified successfully
  
-# EXP NO:9 C PROGRAM PRINT A PATTERN OF NUMBERS FROM 1 TO N AS
-SHOWN BELOW.
+# EXP NO:9 C PROGRAM TO PRINT A PATTERN OF NUMBERS FROM 1 TO N 
 
 Aim:
+
 To write a C program to print a pattern of numbers from 1 to n as shown below.
+
 Algorithm:
+
 1.	Start
 2.	Declare integer variables n, i, j, min
 3.	Read the value of n from the user
