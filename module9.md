@@ -1,8 +1,12 @@
-**EXP NO:11 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.**
+**EXP NO:11 C PROGRAM TO FIND THE PEEK OF STACK USING AN ARRAY.**
 
 Aim:
-To write a C program to display stack elements using an array.
+To write a C program to find the peek of stack using array.
+
+
 Algorithm:
+
+
 1.	Include Necessary Header Files
 2.	Declare Global Variables
 3.	Define the Display Function
@@ -14,25 +18,25 @@ Algorithm:
 Program:
 
 ```
-int stack[40],top,i; void display()
+char stack[100],i;
+int top;
+void peek()
 {
-for(i=top;i>=0;i--)
-{
-printf("%d\n",stack[i]);
-}
+    printf("%c",stack[top]);
 }
 
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/8289921e-dbd8-4b42-ba85-24d2fc65abd0)
+<img width="342" height="459" alt="image" src="https://github.com/user-attachments/assets/1ea6454e-7eee-4861-a3ab-dbb7024e3cf2" />
+
 
 
 
 
 Result:
 
-Thus, the program to display stack elements using an array is verified successfully.
+Thus, the program is executed successfully.
  
 
 **EXP NO:12  PROGRAM TO PUSH THE GIVEN ELEMENT IN TO A STACK USING ARRAY.**
@@ -163,13 +167,13 @@ To create a function in C that deletes an element from a queue implemented using
 Algorithm:
 
 1.	Check if the Queue is Empty
-o	If the front pointer is -1, it means the queue is empty, and there are no elements to delete. Print a message indicating that the queue is empty.
-2.	Delete the Front Element
-o	If the queue is not empty, the element at the front index is deleted.
-o	Increment the front pointer by 1 to remove the element and point to the next element in the queue.
-3.	Check if the Queue Becomes Empty After Deletion:
-o	After deletion, check if the front pointer has passed the rear pointer (front > rear). If this is true, reset both front and rear to -1, indicating that the queue is now empty.
-4.	End the Function.
+2. Print a message indicating that the queue is empty.
+3.	Delete the Front Element
+	If the queue is not empty, the element at the front index is deleted.
+	Increment the front pointer by 1 to remove the element and point to the next element in the queue.
+4.	Check if the Queue Becomes Empty After Deletion:
+	After deletion, check if the front pointer has passed the rear pointer (front > rear). If this is true, reset both front and rear to -1, indicating that the queue is now empty.
+5.	End the Function.
 
 
 
