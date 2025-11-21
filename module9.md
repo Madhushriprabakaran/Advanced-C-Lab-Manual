@@ -40,9 +40,13 @@ Thus, the program is executed successfully.
  
 
 **EXP NO:12  PROGRAM TO PUSH THE GIVEN ELEMENT IN TO A STACK USING ARRAY.**
+
 Aim:
+
 To create a C program to push the given element in to a stack using array.
+
 Algorithm:
+
 1.	Declare global variables for the stack size, top index, and the stack itself.
 2.	Define the push function to add a floating-point number to the stack.
 3.	Initialize the stack size, top index, and the stack itself.
@@ -79,10 +83,14 @@ Thus, the program to push the given element in to a stack using array is verifie
 
  
 **EXP NO:13 C PROGRAM TO DISPLAY QUEUE ELEMENTS USING ARRAY.**
+
 Aim:
+
 To write a C program to display queue elements using array
 
+
 Algorithm:
+
 1.	Declare global variables for the queue, rear, front, and iteration.
 2.	Define the display function to print the elements of the queue.
 3.	Initialize the queue, rear, and front as needed.
@@ -119,10 +127,15 @@ Thus, the program to display queue elements using array is verified successfully
 
 
  **EXP NO:14 C PROGRAM TO INSERT ELEMENTS IN QUEUE USING ARRAY.**
+ 
 Aim:
+
 To write a C program to insert elements in queue using array.
 
+
 Algorithm:
+
+
 1.	Declare global variables for the size, rear, front, and the queue itself.
 2.	Define the enqueue function to add a float to the queue.
 3.	Initialize the rear, front, and size of the queue as needed.
