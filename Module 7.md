@@ -1,49 +1,69 @@
-**EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.**
+
+**C PROGRAM TO FIND THE BIGGEST AMONG THREE NUMBERS USING STRUCTURE.**
 
 Aim:
-To write a C program for array of structure to check eligibility for the vaccine person age above 6 years of age.
+
+
+To write a C program to find the biggest among three numbers using structure.
 
 Algorithm:
-1.	Declare structure eligible with age (integer) and n (character array)
-2.	Declare variable e of type eligible
-3.	Input age and name using scanf, store in e
-4.	If e.age <= 6
--	Print "Vaccine Eligibility: No"
-Else
--	Print "Vaccine Eligibility: Yes"
-5.	Print details (e.age, e.n)
-6.	Return 0
+
+
+1.Start the program.
+
+2.Declare a structure Numbers with three integer members.
+
+3.Read three integer values from the user and store them in the structure variable nums.
+
+4.Compare the three numbers inside the function findBiggest() to determine the largest.
+
+5.Return the biggest number to the main function.
+
+6.Display the biggest number and stop the program.
  
 Program:
 ```
-#include<stdio.h> struct eligib
-{
-int age; char n[4];
+#include <stdio.h>
+struct Numbers {
+    int num1;
+    int num2;
+    int num3;
 };
-int main()
-{
-struct eligib e; scanf("%d%s",&e.age,e.n);
-if(e.age<=6)
-{
-printf("Age:%d\nName:%svaccine:%d\neligibility:no",e.age,e.n,e.age);
-}
- 
-else
-{
-}
- 
 
-printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
- 
+int findBiggest(struct Numbers nums) {
 
+    if (nums.num1 >= nums.num2 && nums.num1 >= nums.num3) {
+        return nums.num1;
+    } else if (nums.num2 >= nums.num1 && nums.num2 >= nums.num3) {
+        return nums.num2;
+    } else {
+        return nums.num3;
+    }
 }
+
+int main() {
+    struct Numbers nums; 
+
+    
+    scanf("%d %d %d", &nums.num1, &nums.num2, &nums.num3);
+
+   
+    int biggest = findBiggest(nums);
+    printf("%d\n", biggest);
+
+    return 0;
+}
+
 
 ```
 
 
 Output:
 
-![Screenshot 2025-04-25 102120](https://github.com/user-attachments/assets/875d7abd-3282-4d64-96f7-b69834282f0a)
+
+<img width="522" height="341" alt="image" src="https://github.com/user-attachments/assets/39c72adb-f90a-4d63-8ef8-27bef1472ebe" />
+
+
 
 
 
@@ -51,42 +71,84 @@ Result:
 Thus, the program is verified successfully. 
 
 
-**EXP NO:2 C PROGRAM FOR PASSING STRUCTURES AS FUNCTION ARGUMENTS AND RETURNING A STRUCTURE FROM A FUNCTION**
+**EXP NO:2 C PROGRAM TO CALCULATE DIFFERENCE BETWEEN TWO TIME PERIODS USING A USER-DEFINED FUNCTION.**
+
+
 Aim:
-To write a C program for passing structure as function and returning a structure from a function
+
+
+To Write a C Program to Calculate Difference Between Two Time Periods  using a user-defined function.
+
+
+
 
 Algorithm:
-1.	Define structure numbers with members a and b.
-2.	Declare variable n of type numbers.
-3.	Prompt the user to enter values for a and b.
-4.	Input values for a and b into n using scanf.
-5.	Call the add function with n as an argument.
-6.	Print the result returned by the add function.
-7.	Return 0
- 
+
+
+1.Start the program and declare three structure variables: start_time, stop_time, and diff.
+
+2.Read the start time and stop time values (hours, minutes, seconds) from the user.
+
+3.Call the function diff_between_time() and pass the start time, stop time, and the address of diff.
+
+4.Inside the function, adjust seconds and minutes if needed (borrow 1 min = 60 sec, borrow 1 hr = 60 min) to ensure valid subtraction.
+
+5.Calculate the difference in hours, minutes, and seconds and store them in the diff structure.
+
+6.Display the start time, stop time, and the final time difference, then end the program.
+
 Program:
 ```
-#include<stdio.h> struct numbers
-{
-int a; int b;
-}n;
-int add(struct numbers n); int main()
-{
+#include<stdio.h>
+struct time {
+   int sec;
+   int min;
+   int hrs;
+};
+void diff_between_time(struct time t1,
+struct time t2,
+struct time *diff);
+int main(){
+   struct time start_time, stop_time, diff;
+   scanf("%d %d %d", &start_time.hrs,&start_time.min,&start_time.sec);
+   scanf("%d %d %d", &stop_time.hrs,&stop_time.min,&stop_time.sec);
 
-scanf("%d %d ",&n.a,&n.b);
-printf("%d",add(n));
+   diff_between_time(start_time, stop_time, &diff);
+   printf("Time Difference: %d:%d:%d - ", start_time.hrs,
+   start_time.min,
+   start_time.sec);
+   printf("%d:%d:%d ", stop_time.hrs,
+   stop_time.min,
+   stop_time.sec);
+   printf("= %d:%d:%d", diff.hrs, diff.min, diff.sec);
+   return 0;
 }
-int add(struct numbers n)
-{
-return n.a+n.b;
+
+void diff_between_time(struct time start,
+struct time stop,
+struct time *diff){
+   while (stop.sec > start.sec) {
+      --start.min;
+      start.sec += 60;
+   }
+   diff->sec = start.sec - stop.sec;
+   while (stop.min > start.min) {
+      --start.hrs;
+      start.min += 60;
+   }
+   diff->min = start.min - stop.min;
+   diff->hrs = start.hrs - stop.hrs;
 }
+
 
 
 ```
 
 Output:
 
-![Screenshot 2025-04-25 102229](https://github.com/user-attachments/assets/c4fda8ea-7b67-47c2-9123-dfdae6e283a6)
+
+
+<img width="1083" height="439" alt="image" src="https://github.com/user-attachments/assets/36a598ed-541c-4ccc-9a5d-d318e395af00" />
 
 
 
@@ -96,38 +158,42 @@ Result:
 Thus, the program is verified successfully
 
 
- **EXP.NO:3 C PROGRAM TO READ A FILE NAME FROM USER AND WRITE THAT FILE USING FOPEN()**
+ **EXP.NO:3 C PROGRAM TO CREATE A FILE WITH NAME "Staff.txt"**
 
+ 
 Aim:
-To write a C program to read a file name from user
+
+
+To write a C program to create a file with name "Staff.txt"
 
 Algorithm:
-1.	Include the necessary header file stdio.h.
-2.	Begin the main function.
-3.	Declare a file pointer p.
-Declare a character array name to store the file name.
-4.	Prompt the user to enter a file name.
-Use scanf to input the file name into the name array.
-5.	Print a message indicating that the file with the specified name has been created successfully.
-6.	Use fopen to open a file with the name provided by the user in write mode ("w").
--	If successful, continue to the next step.
--	If unsuccessful, print an error message and exit the program with a non-zero status.
-1.	Print a message indicating that the file has been opened successfully.
-2.	Use fclose to close the file.
-3.	Print a message indicating that the file has been closed.
-4.	End the main function.
-5.	Return 0 to indicate successful program execution.
+
+
+1.Start the program.
+
+2.Declare a file pointer fp.
+
+3.Open the file Staff.txt in write mode.
+
+4.Check if the file opened successfully; if yes, display a success message.
+
+5.Close the file using fclose().
+
+6.Display “File Closed” and end the program.
  
 Program:
 ```
-#include <stdio.h> int main()
+#include <stdio.h>
+int main()
 {
-FILE *p;
-char name[30]; scanf("%s",name);
-printf("%s File Created Successfully",name); p=fopen("name","w");
-printf("\n%s File Opened",name); fclose(p);
-printf("\n%s File Closed",name);
+    FILE *fp;
+    fp=fopen("Staff.txt","w");
+    if(fp)
+    printf("File Created Successfully\nFile Opened");
+    fclose(fp);
+    printf("\nFile Closed");
 }
+
 
 ```
 
@@ -135,7 +201,10 @@ printf("\n%s File Closed",name);
 Output:
 
 
-![Screenshot 2025-04-25 102311](https://github.com/user-attachments/assets/26ae7632-11c8-4c2e-9627-3848ad724e46)
+
+<img width="752" height="206" alt="image" src="https://github.com/user-attachments/assets/e8d92318-42e6-4008-838a-a2c3bc223d5e" />
+
+
 
 
 
@@ -154,9 +223,17 @@ Thus, the program is verified successfully
 
 
 **EXP NO:4   PROGRAM TO READ A FILE NAME FROM USER, WRITE THAT FILE AND INSERT TEXT IN TO THAT FILE**
+
+
 Aim:
+
+
 To write a C program to read, a file and insert text in that file
+
+
 Algorithm:
+
+
 1.	Include the necessary header file stdio.h.
 2.	Begin the main function.
 3.	Declare a file pointer p.
@@ -167,15 +244,12 @@ Use scanf to input the file name into the name array and the number of strings i
 -	If successful, continue to the next step.
 -	If unsuccessful, print an error message and exit the program with a non-zero status.
 6.	Print a message indicating that the file has been opened successfully.
-1.	Use a loop to input strings from the user and write them to the file using fputs.
-2.	Use fclose to close the file.
-3.	Print a message indicating that data has been added successfully.
-4.	End the main function.
-5.	Return 0 to indicate successful program execution.
+
  
 Program:
 ```
-#include <stdio.h> int main()
+#include <stdio.h>
+int main()
 {
 FILE *p;
 char name[20]; int num;
@@ -206,71 +280,61 @@ Thus, the program is verified successfully
 
 
 
-**Ex No 5 : C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE**
+**Ex No 5 : C PROGRAM TO ADD TWO COMPLEX NUMBERS BY PASSING STRUCTURE TO A FUNCTION**
 
 Aim:
-The aim of this program is to dynamically allocate memory to store information about multiple subjects (name and marks), input the details for each subject, and then display the stored information. Finally, it frees the allocated memory to prevent memory leaks.
+
+
+ To write a C Program to Add Two Complex Numbers by Passing Structure to a Function.
 
 Algorithm:
-1.Input the number of subjects.
 
-2.Read the integer value n from the user, which represents the number of subjects.
 
-3.Dynamically allocate memory:
+1.Start the program and define a structure Complex with real and imaginary parts.
 
-4.Use malloc to allocate memory for n subjects. Each subject has a name (array of characters) and marks (integer).
+2.Read the real and imaginary parts of the first complex number (num1).
 
-5.If memory allocation fails (i.e., the pointer s is NULL), display an error message and exit the program.
+3.Read the real and imaginary parts of the second complex number (num2).
 
-6.Input the details of each subject
+4.Call the function addComplex() by passing num1 and num2.
 
-7.Use a for loop to read the name and marks of each subject using scanf. For each subject, store the name as a string and marks as an integer in the dynamically allocated memory.
+5.Compute the sum of the real parts and imaginary parts inside the function and return the result.
 
-8.Display the details of each subject
+6.Display the resulting complex number and end the program.
 
-9.Use another for loop to print the name and marks of each subject.
 
-10.Free the allocated memory
-
-11.After all operations are done, call free(s) to release the dynamically allocated memory.
-
-12.Return from the main function
-
-13.End the program by returning 0.
 
 Program:
 
 ```
 #include <stdio.h>
-#include <stdlib.h>
-struct Subject
-{
-    char name[20];
-    int marks;
+struct Complex {
+    float real;
+    float imag;
 };
-int main()
-{
-    int i,n;
-    scanf("%d",&n);
-    struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject));
-    if(s==NULL)
-    {
-        printf("Memory Alocation Failed\n");
-        return 1;
-    }
-    for(i=0;i<n;i++)
-    {
-        scanf("%s %d",s[i].name,&s[i].marks);
-    }
-    for(i=0;i<n;i++)
-    {
-        printf("%s  %d\n",s[i].name,s[i].marks);
-    }
-    
-    free (s);
-    
+struct Complex addComplex(struct Complex c1, struct Complex c2) {
+    struct Complex result;
+    result.real = c1.real + c2.real;
+    result.imag = c1.imag + c2.imag;
+    return result;
+}
+
+int main() {
+    struct Complex num1, num2, sum;
+    scanf("%f", &num1.real);
+    scanf("%f", &num1.imag);
+    scanf("%f", &num2.real);
+    scanf("%f", &num2.imag);
+    sum = addComplex(num1, num2);
+    printf("Sum = %.1f + %.1fi\n", sum.real, sum.imag);
+
     return 0;
 }
+
+
+
+
+
 
 
 
@@ -279,7 +343,11 @@ int main()
 Output:
 
 
-![Screenshot 2025-04-25 102526](https://github.com/user-attachments/assets/297a272e-1888-4dcc-a7ce-9b03c9c2bac3)
+
+<img width="556" height="342" alt="image" src="https://github.com/user-attachments/assets/4ee078a4-85d0-4a06-8d0d-b30e3e12367a" />
+
+
+
 
 
 
